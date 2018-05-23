@@ -98,44 +98,62 @@ export default Login;
 |**`enablesReturnKeyAutomatically`**|If true, the keyboard disables the return key when there is no text and automatically enables it when there is text. | bool |`false`|
 |**`typeInput`**|Type TextInput. Value valid: `email`, `password`, `default` | *None* |`email`|
 |**`hiddenIcon`**|If false, hide icon in custom view of TextInput. | bool |`true`|
-|**`styleInputDefault`**|Custom style TextInputDefault. | *None* |`styleInputDefault: {
+|**`renderIcon`**|Custom Icon view for view input. | func |*None*|
+|**`onChangeText`**|Change value text input, setState value text input. | func |*None*|
+
+## Style props
+### Custom style input
+- Custom style TextInput default
+```javascript
+styleInputDefault: {
         color: '#000',
         height: 40,
         fontSize: 14,
         // width: WINDOW_WIDTH,
         backgroundColor: 'transparent',
         paddingLeft: 10
-    },`|
-|**`styleInputEmail`**|Custom style TextInputEmail. | *None* |`styleInputEmail: {
+ },
+ ```
+- Custom style TextInput email
+```javascript
+styleInputEmail: {
       color: '#000',
       height: 40,
       fontSize: 14,
       // width: WINDOW_WIDTH,
       backgroundColor: 'transparent',
       paddingLeft: 10
-    },`|
-|**`styleInputPassword`**|Custom style TextInputPassword. | *None* |`styleInputPassword: {
+ },
+ ```
+- Custom style TextInput password
+```javascript
+styleInputPassword: {
       color: '#000',
       height: 40,
       fontSize: 14,
       // width: WINDOW_WIDTH,
       backgroundColor: 'transparent',
       paddingLeft: 10
-    }`|
-|**`styleItem`**|Custom style View TextInput. | *None* |`styleItem: { 
+ },
+ ```
+ ### Custom style item
+ ```javascript
+ styleItem: { 
         alignItems: "center",   
         borderWidth: 1,
         backgroundColor: '#ededed',
         borderRadius: 5,
-    }`|
-|**`styleIcon`**|Custom style Icon. | *None* |`styleIcon: { 
+ },
+ ```
+ ### Custom style icon
+ ```javascript
+ styleIcon: { 
       color: '#000',
       fontSize: 22, 
       backgroundColor: "transparent", 
       alignItems: "center",
       marginRight: 5,
       marginLeft: 5
-    }`|
-|**`renderIcon`**|Custom Icon view for view input. | func |*None*|
-|**`onChangeText`**|Change value text input, setState value text input. | func |*None*|
+ },
+ ```
 
