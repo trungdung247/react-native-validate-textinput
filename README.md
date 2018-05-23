@@ -81,7 +81,7 @@ export default Login;
 *Note: Other properties will be passed down to underlying component.*
 
 | Prop | Description | Type | Default |
-|---|---|---|
+|---|---|---|---|
 |**`autoFocus`**|If true, focuses the input on componentDidMount. | bool |`false`|
 |**`autoCapitalize`**|Can tell TextInput to automatically capitalize certain characters. | bool |`false`|
 |**`editable`**|If false, text is not editable. The default value is true. | bool |`false`|
