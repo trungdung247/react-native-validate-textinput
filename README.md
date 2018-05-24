@@ -25,10 +25,30 @@ class Login extends Component {
       valueInput: ""
     };
   }
+  
+  _onProcessTextChange(currentText){
+        if(!currentText){
+          this.setState({
+            errorText: 'Không được để trống'
+          })
+        } else if(!currentText.includes("@") && currentText){
+          this.setState({
+            errorText: 'Phải chứa ký tự @'
+          })
+        } else if(currentText.length < 8 && currentText){
+          this.setState({
+            errorText: 'Phải lớn hơn 8 ký tự'
+          })
+        }
+        else{
+          this.setState({
+            errorText: ''
+          })
+        }
+  }
 
   render() {
     return (
-      <Container>
         <View style={styles.container}>
             <Image source={background} style={styles.shadow}>
               <View style={styles.bg}>
@@ -39,11 +59,12 @@ class Login extends Component {
                   //   color: 'red'
                   // }}
                   onChangeTextInput={(text) => {
+                    this._onProcessTextChange(text);
                     this.setState({
                       valueInput: text
                     })
                   }}
-                  // hiddenIcon={false}
+                  hiddenIcon={false}
                 />
 
                 <ValidateTextInput
@@ -57,7 +78,7 @@ class Login extends Component {
                       valueInput: text
                     })
                   }}
-                  // hiddenIcon={false}
+                  hiddenIcon={false}
                 />
 
                 <Button
@@ -69,7 +90,6 @@ class Login extends Component {
               </View>
             </Image>
         </View>
-      </Container>
     );
   }
 }
@@ -97,9 +117,12 @@ export default Login;
 |**`caretHidden`**|If true, caret is hidden. | bool |`false`|
 |**`enablesReturnKeyAutomatically`**|If true, the keyboard disables the return key when there is no text and automatically enables it when there is text. | bool |`false`|
 |**`typeInput`**|Type TextInput. Value valid: `email`, `password`, `default` | *None* |`email`|
-|**`hiddenIcon`**|If false, hide icon in custom view of TextInput. | bool |`true`|
+|**`hiddenIcon`**|If true, hide icon in custom view of TextInput. | bool |`false`|
 |**`renderIcon`**|Custom Icon view for view input. | func |*None*|
 |**`onChangeText`**|Change value text input, setState value text input. | func |*None*|
+|**`backgroundColorErrorView`**|Change background color for error validate view. | color |`#DA0967`|
+|**`colorErrorText`**|Change color error text. | color |`#fff`|
+|**`customValidate`**|If true, custom validate value text input. | bool |`false`|
 
 ## Style props
 ### Custom style input
