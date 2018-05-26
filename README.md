@@ -65,6 +65,8 @@ class Login extends Component {
                     })
                   }}
                   hiddenIcon={false}
+                  typeErrorView={"bottomInput"}
+                  hiddenIconErrorView={true}
                 />
 
                 <ValidateTextInput
@@ -123,6 +125,9 @@ export default Login;
 |**`backgroundColorErrorView`**|Change background color for error validate view. | color |`#DA0967`|
 |**`colorErrorText`**|Change color error text. | color |`#fff`|
 |**`customValidate`**|If true, custom validate value text input. | bool |`false`|
+|**`typeErrorView`**|Type error view when validate text input. Vaue valid: `design`, `bottomInput` . | string |`design`|
+|**`sizeErrorText`**|Change fontSize error text. | number |`13`|
+|**`hiddenIconErrorView`**|If true, hide icon in error view. | bool |`false`|
 
 ## Style props
 ### Custom style input
